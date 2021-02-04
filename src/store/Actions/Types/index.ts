@@ -1,3 +1,3 @@
-enum Months {
-  'GET_MONTHS',
+export enum TypeMonths {
+  GET_MONTHS = 'GET_MONTHS',
 }

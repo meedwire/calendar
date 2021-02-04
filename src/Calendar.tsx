@@ -1,23 +1,14 @@
-import React, { useState } from 'react';
-import { View, Text, Button } from './CalendarComponents';
-import { Number as CLNumber } from './components/Number';
-import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
+import React from 'react';
+import { Provider } from 'react-redux';
+import { store } from './store';
+import { Container } from './components/Container';
 
-function Calendar() {
+const Calendar: React.FC = () => {
   return (
-    <View className="App">
-      <View flexDirection="row">
-        {['D', 'S', 'T', 'Q', 'Q', 'S', 'S'].map((day) => (
-          <View>
-            <Text>{day}</Text>
-          </View>
-        ))}
-      </View>
-      <View>
-        <CLNumber day={1} />
-      </View>
-    </View>
+    <Provider {...{ store }}>
+      <Container />
+    </Provider>
   );
-}
+};
 
 export default Calendar;

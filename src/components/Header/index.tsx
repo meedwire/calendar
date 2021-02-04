@@ -1,43 +1,18 @@
-import React from "react";
-import { View, Text } from "../../CalendarComponents/View";
-import { FiChevronDown, FiChevronUp } from 'react-icons/fi';
+import React from 'react';
+import { Button, Text, View } from '../../CalendarComponents';
 
-const Header = () => {
-
-      function handleChangeMoreMonth() {
-    let currMonthNumber = months.findIndex(({ month }) => month === currMonth);
-
-    console.log(currMonthNumber);
-
-    if (currMonthNumber === 11) {
-      currMonthNumber = -1;
-    }
-
-    setCurrMonth(months[currMonthNumber + 1].month);
-  }
-
-  function handleChangeAnyLessMonth() {
-    let currMonthNumber = months.findIndex(({ month }) => month === currMonth);
-
-    if (currMonthNumber === 0) {
-      currMonthNumber = 12;
-    }
-
-    setCurrMonth(months[currMonthNumber - 1].month);
-  }
+const Header: React.FC = () => {
   return (
     <View flexDirection="row">
-    <View>
-      <Text>{currMonth} de 2020</Text>
+      <Text>Janeiro de 2021</Text>
+      <Button>
+        <Text>^</Text>
+      </Button>
+      <Button>
+        <Text>^</Text>
+      </Button>
     </View>
-    <Button onClick={handleChangeAnyLessMonth}>
-      <FiChevronUp />
-    </Button>
-    <Button onClick={handleChangeMoreMonth}>
-      <FiChevronDown />
-    </Button>
-  </View>
-  )
+  );
 };
 
 export { Header };

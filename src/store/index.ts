@@ -1,4 +1,4 @@
-import { createStore } from "redux";
-import { months } from "./Reducers";
+import { createStore } from 'redux';
+import { months } from './Reducers';
 
-export const store = createStore(months)
+export const store = createStore(months);

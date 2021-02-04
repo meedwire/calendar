@@ -3,17 +3,34 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["plugin:react/recommended", "standard"],
+  "extends": [
+    "plugin:react/recommended",
+    "standard",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
+    "ecmaVersion": 2018,
+    "sourceType": "module",
     "ecmaFeatures": {
       "jsx": true
-    },
-    "ecmaVersion": 12,
-    "sourceType": "module"
+    }
+  },
+  "settings": {
+    "react": {
+      "version": "latest"
+    }
   },
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
-    "semi": ["erro"]
+    "semi": ["error", "always"],
+    "comma-dangle": "off",
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "space-before-function-paren": "off",
+    "@typescript-eslint/no-shadow": ["error"],
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": "error"
   }
 }
