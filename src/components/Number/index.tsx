@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text } from '../../CalendarComponents';
 
-// import { Container } from './styles';
 
 interface PropsNumber {
   day: number;
