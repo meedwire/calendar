@@ -1,9 +1,20 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import styled from 'styled-components';
+import theme from '../../styles/theme';
 
 enum Size {
   sm = '40%',
   md = '70%',
   xl = '68%',
+}
+
+enum BgColor {
+  // @ts-ignore
+  primary = theme.colors.primary,
+  // @ts-ignore
+  secundary = theme.colors.secundary,
+  // @ts-ignore
+  background = theme.colors.background,
 }
 
 export interface PropsView {
@@ -21,6 +32,8 @@ export interface PropsView {
     | 'ridge'
     | 'inset'
     | 'outset';
+  bgColor?: keyof typeof BgColor;
+  radius?: number;
 }
 
 export const View = styled.div<PropsView>`
@@ -33,4 +46,8 @@ export const View = styled.div<PropsView>`
   border-style: ${(props) =>
     props.border ? props.borderStyle || 'solid' : undefined};
   width: ${(props) => (props.size ? Size[props.size] : undefined)};
+  background-color: ${(props) =>
+    props.bgColor ? BgColor[props.bgColor] : BgColor.background};
+  border-radius: ${(props) =>
+    props.radius ? props.radius : props.theme.radius};
 `;
