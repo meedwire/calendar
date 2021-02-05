@@ -2,6 +2,12 @@
 import styled from 'styled-components';
 import theme from '../../styles/theme';
 
+enum Radius {
+  sm = '5px',
+  md = '10px',
+  xl = '15px',
+}
+
 enum Size {
   sm = '40%',
   md = '70%',
@@ -33,7 +39,7 @@ export interface PropsView {
     | 'inset'
     | 'outset';
   bgColor?: keyof typeof BgColor;
-  radius?: number;
+  radius?: string;
 }
 
 export const View = styled.div<PropsView>`
@@ -49,5 +55,5 @@ export const View = styled.div<PropsView>`
   background-color: ${(props) =>
     props.bgColor ? BgColor[props.bgColor] : BgColor.background};
   border-radius: ${(props) =>
-    props.radius ? props.radius : props.theme.radius};
+    props.radius ? Radius[props.radius] : Radius[props.theme.radius]};
 `;
