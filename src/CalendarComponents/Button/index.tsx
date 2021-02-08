@@ -11,11 +11,13 @@ interface PropsButton {
 }
 
 export const Button = styled.button<PropsButton>`
-  padding: 10px;
   background-color: ${(props) => props.theme.colors.primary};
   border-radius: ${(props) =>
     props.radius ? Radius[props.radius] : Radius[props.theme.radius]};
   border-style: hidden;
   text-transform: uppercase;
   outline: none;
+  justify-content: center;
+  align-items: center;
+  display: flex;
 `;

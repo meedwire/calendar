@@ -40,13 +40,17 @@ export interface PropsView {
     | 'outset';
   bgColor?: keyof typeof BgColor;
   radius?: string;
+  justifyContent?:
+    | 'space-between'
+    | 'space-around'
+    | 'space-evenly'
+    | 'stretch';
 }
 
 export const View = styled.div<PropsView>`
   display: flex;
   flex-direction: ${(props) =>
     props.flexDirection ? props.flexDirection : 'column'};
-  padding: 10px;
   border-width: ${(props) => (props.border ? `${props.border}px` : undefined)};
   border-color: ${(props) => (props.border ? props.theme.border : undefined)};
   border-style: ${(props) =>
@@ -56,4 +60,6 @@ export const View = styled.div<PropsView>`
     props.bgColor ? BgColor[props.bgColor] : BgColor.background};
   border-radius: ${(props) =>
     props.radius ? Radius[props.radius] : Radius[props.theme.radius]};
+  justify-content: ${(props) =>
+    props?.justifyContent ? props?.justifyContent : 'none'};
 `;
