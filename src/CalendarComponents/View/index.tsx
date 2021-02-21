@@ -9,7 +9,7 @@ enum Radius {
 }
 
 enum Size {
-  sm = '40%',
+  sm = '30%',
   md = '70%',
   xl = '68%',
 }

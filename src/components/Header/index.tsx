@@ -10,7 +10,9 @@ const Header: React.FC = () => {
       justifyContent="space-between"
       padding={10}
     >
-      <Text>Janeiro de 2021</Text>
+      <Text fontSize={25} color="#fbed6d">
+        Janeiro de 2021
+      </Text>
       <View flexDirection="row">
         <Button padding={10}>
           <AiFillCaretDown />

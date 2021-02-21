@@ -4,11 +4,11 @@ export default {
   radius: 'sm',
 
   colors: {
-    primary: '#4d3568',
+    primary: '#29323f',
     secundary: '#D63AF9',
     complementary: '#15ff15',
 
-    background: '#230e3d',
-    text: '#333',
+    background: '#29323f',
+    text: '#ffffff',
   },
 };

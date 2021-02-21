@@ -34,7 +34,7 @@ const Container: React.FC = () => {
   }, []);
 
   return (
-    <View border={1} size="sm" bgColor="primary">
+    <View border={1} size="sm" bgColor="primary" padding={50}>
       <Header />
       <Divider />
       <DaysBar />

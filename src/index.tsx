@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Calendar from './Calendar';
-import { GlobalStyle } from './styles/GlobalStyle';
+import './styles/GlobalStyle.css';
 
 ReactDOM.render(
   <React.StrictMode>
     <Calendar />
-    <GlobalStyle />
   </React.StrictMode>,
   document.getElementById('root')
 );
