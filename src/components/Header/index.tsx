@@ -4,13 +4,18 @@ import { AiFillCaretDown, AiFillCaretUp } from 'react-icons/ai';
 
 const Header: React.FC = () => {
   return (
-    <View flexDirection="row" justifyContent="space-between">
+    <View
+      alignItems="center"
+      flexDirection="row"
+      justifyContent="space-between"
+      padding={10}
+    >
       <Text>Janeiro de 2021</Text>
       <View flexDirection="row">
-        <Button>
+        <Button padding={10}>
           <AiFillCaretDown />
         </Button>
-        <Button>
+        <Button padding={10}>
           <AiFillCaretUp />
         </Button>
       </View>

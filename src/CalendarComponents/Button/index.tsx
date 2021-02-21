@@ -8,6 +8,7 @@ enum Radius {
 
 interface PropsButton {
   radius?: keyof typeof Radius;
+  padding?: number;
 }
 
 export const Button = styled.button<PropsButton>`
@@ -20,4 +21,5 @@ export const Button = styled.button<PropsButton>`
   justify-content: center;
   align-items: center;
   display: flex;
+  padding: ${(props) => (props.padding ? `${props.padding}px` : undefined)};
 `;

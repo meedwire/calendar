@@ -44,11 +44,23 @@ export interface PropsView {
     | 'space-between'
     | 'space-around'
     | 'space-evenly'
-    | 'stretch';
+    | 'stretch'
+    | 'center';
+  alignItems?:
+    | 'center'
+    | 'end'
+    | 'flex-end'
+    | 'flex-start'
+    | 'self-end'
+    | 'self-start'
+    | 'start';
+  height?: number;
+  padding?: number;
 }
 
 export const View = styled.div<PropsView>`
   display: flex;
+  padding: ${(props) => (props.padding ? `${props.padding}px` : undefined)};
   flex-direction: ${(props) =>
     props.flexDirection ? props.flexDirection : 'column'};
   border-width: ${(props) => (props.border ? `${props.border}px` : undefined)};
@@ -61,5 +73,8 @@ export const View = styled.div<PropsView>`
   border-radius: ${(props) =>
     props.radius ? Radius[props.radius] : Radius[props.theme.radius]};
   justify-content: ${(props) =>
-    props?.justifyContent ? props?.justifyContent : 'none'};
+    props.justifyContent ? props.justifyContent : 'none'};
+  align-items: ${(props) => (props.alignItems ? props.alignItems : undefined)};
+  height: ${(props) => (props.height ? `${props.height}px` : undefined)};
+  transition: background-color 500ms, box-shadow 1000ms;
 `;

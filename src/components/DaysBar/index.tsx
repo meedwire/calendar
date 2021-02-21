@@ -6,7 +6,16 @@ const DaysBar: React.FC = () => {
   return (
     <View flexDirection="row" justifyContent="space-evenly">
       {WeekDays.map((d, i) => (
-        <Text key={d + i}>{d}</Text>
+        <View
+      key={d + i}
+      style={{ width: 50 }}
+      height={40}
+      justifyContent="center"
+      alignItems="center"
+      border={1}
+        >
+          <Text>{d}</Text>
+        </View>
       ))}
     </View>
   );
