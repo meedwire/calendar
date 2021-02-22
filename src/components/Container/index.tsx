@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import { Divider, View, Text } from '../../CalendarComponents';
 import { getDaysMonth } from '../../Utils';
 import { Day } from '../Day';
+import Days from '../Days';
 import { DaysBar } from '../DaysBar';
 import { Header } from '../Header';
 
 // eslint-disable-next-line no-extend-native
-Object.defineProperty(Array.prototype, 'chunk_inefficient', {
+Object.defineProperty(Array.prototype, 'chunk', {
   value: function (chunkSize) {
     // eslint-disable-next-line @typescript-eslint/no-this-alias
     const array = this;
@@ -30,30 +31,20 @@ const Container: React.FC = () => {
 
   useEffect(() => {
     // @ts-ignore
-    setDays(getDaysMonth(currMonth, currYear).chunk_inefficient(7));
+    setDays(getDaysMonth(currMonth, currYear).chunk(7));
   }, []);
 
   return (
     <View border={1} size="sm" bgColor="primary" padding={50}>
-      <Header />
+      <Header month="Fevereiro" year="2021" />
       <Divider />
       <DaysBar />
       <View>
-        {days.map((row, i) => (
-          <View
-            style={{ marginTop: i === 0 ? 20 : undefined, marginBottom: 20 }}
-            key={i.toString()}
-            flexDirection="row"
-            justifyContent="space-evenly"
-          >
-            {row.map((day) => (
-              <Day
-                onSelect={(d) => setSelected(d)}
-                selected={selected === day}
-                day={day}
-              />
-            ))}
-          </View>
+        {days.map((rowDays, index) => (
+          <Days
+            key={index.toString()}
+            {...{ selected, setSelected, rowDays, index }}
+          />
         ))}
       </View>
     </View>

@@ -1,11 +1,11 @@
 import React from 'react';
 import { Text, View } from '../../CalendarComponents';
-import { WeekDays } from '../../Utils';
+import { weekDays } from '../../Utils';
 
 const DaysBar: React.FC = () => {
   return (
     <View flexDirection="row" justifyContent="space-evenly">
-      {WeekDays.map((d, i) => (
+      {weekDays.map((d, i) => (
         <View
           key={d + i}
           style={{ width: 50 }}
